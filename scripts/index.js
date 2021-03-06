@@ -5,10 +5,11 @@ const contentImg = document.getElementById('myphoto');
 const styleImg = document.getElementById('filter');
 const loading = document.getElementById('loading');
 
-start();
+stopLoading();
 
 function start() {
   model.initialize().then(() => {
+    startLoading();
     stylize();
   });
 }
@@ -62,5 +63,4 @@ function stopLoading() {
 
 function chooseFilter(event) {
     styleImg.src = event.target.src;
-    stylize();
 }

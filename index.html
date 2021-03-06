@@ -19,15 +19,9 @@
       </p>
       <div class="columns">
         <div class="column">
-            <p><span id="loading">Machine producing genius ...</span></p>
-            <canvas id="finalMasterpiece" height="270px"></canvas>
-        </div>
-      </div>
-      <div class="columns">
-        <div class="column">
             <p>Take or upload a photo</p>
-            <input type="file" accept="image/*" onchange="loadContent(event)" />
-            <img src="https://uploads0.wikiart.org/00211/images/alfred-freddy-krupa/12365924-10208035151854247-1801747829036974034-o.jpg!Large.jpg" id="myphoto" crossorigin="anonymous" class="image" />
+            <input type="file" accept="image/*" onchange="loadContent(event)" capture />
+            <img src="images/hazrul-headshot.png" id="myphoto" crossorigin="anonymous" class="image" />
         </div>
         <div class="column">
             <p>Select a masterpiece filter</p>
@@ -36,6 +30,13 @@
               <li><img src="https://uploads4.wikiart.org/00179/images/vincent-van-gogh/vangogh-starry-night-ballance1.jpg!PinterestSmall.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" /></li>
               <li><img src="https://uploads7.wikiart.org/images/leonardo-da-vinci/mona-lisa.jpg!PinterestSmall.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" /></li>
             </ul>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+            <p><button onclick="start()">Paint with AI</button>
+            <p><span id="loading">Machine producing genius ...</span></p>
+            <canvas id="finalMasterpiece" height="270px"></canvas>
         </div>
       </div>
     </div>
