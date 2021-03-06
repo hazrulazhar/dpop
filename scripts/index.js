@@ -4,14 +4,20 @@ const ctx = canvas.getContext('2d');
 const contentImg = document.getElementById('myphoto');
 const styleImg = document.getElementById('filter');
 const loading = document.getElementById('loading');
+const btnDL = document.getElementById('btnDownload');
 
-stopLoading();
+start();
 
 function start() {
-  model.initialize().then(() => {
-    startLoading();
-    stylize();
-  });
+  btnDL.hidden = true;
+  loading.hidden = true;
+}
+
+function paint() {
+    model.initialize().then(() => {
+        startLoading();
+        stylize();
+    });
 }
 
 async function clearCanvas() {
@@ -33,6 +39,8 @@ async function stylize() {
     stopLoading();
     ctx.putImageData(imageData, 0, 0);
   });
+
+  btnDL.hidden = false;
 }
 
 function loadImage(event, imgElement) {
@@ -63,4 +71,8 @@ function stopLoading() {
 
 function chooseFilter(event) {
     styleImg.src = event.target.src;
+}
+
+function downloadArt(e) {
+
 }
