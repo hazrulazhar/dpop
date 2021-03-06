@@ -73,6 +73,9 @@ function chooseFilter(event) {
     styleImg.src = event.target.src;
 }
 
-function downloadArt(e) {
-
+function downloadArt() {
+    let link = document.getElementById('masterpiece');
+    link.setAttribute('download', 'masterpiece.png');
+    link.setAttribute('href', canvas.toDataURL("image/png"));
+    link.click();
 }
