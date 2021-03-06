@@ -47,8 +47,8 @@ function loadImage(event, imgElement) {
   const reader = new FileReader();
   reader.onload = (e) => {
     imgElement.src = e.target.result;
-    startLoading();
-    stylize();
+    //startLoading();
+    //stylize();
   };
   reader.readAsDataURL(event.target.files[0]);
 }
