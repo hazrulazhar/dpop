@@ -54,10 +54,8 @@ function loadStyle(event) {
 
 function startLoading() {
   loading.hidden = false;
-  canvas.style.opacity = 0;
 }
 
 function stopLoading() {
   loading.hidden = true;
-  canvas.style.opacity = 1;
 }
