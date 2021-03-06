@@ -1,3 +1,11 @@
 .image {
     width: 250px;
 }
+
+.filter-choices {
+    display: flex;
+}
+
+.image-choices {
+    width: 50px;
+}

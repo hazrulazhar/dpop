@@ -59,3 +59,8 @@ function startLoading() {
 function stopLoading() {
   loading.hidden = true;
 }
+
+function chooseFilter(event) {
+    styleImg.src = event.target.src;
+    stylize();
+}
