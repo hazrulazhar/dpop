@@ -1,13 +1,14 @@
 const model = new mi.ArbitraryStyleTransferNetwork();
-const canvas = document.getElementById('finalMasterpiece');
+const canvas = document.getElementById('stylized');
 const ctx = canvas.getContext('2d');
-const contentImg = document.getElementById('myphoto');
-const styleImg = document.getElementById('filter');
+const contentImg = document.getElementById('content');
+const styleImg = document.getElementById('style');
 const loading = document.getElementById('loading');
+const notLoading = document.getElementById('ready');
 
-start();
+setupDemo();
 
-function start() {
+function setupDemo() {
   model.initialize().then(() => {
     stylize();
   });
@@ -54,8 +55,12 @@ function loadStyle(event) {
 
 function startLoading() {
   loading.hidden = false;
+  notLoading.hidden = true;  
+  canvas.style.opacity = 0;
 }
 
 function stopLoading() {
   loading.hidden = true;
+  notLoading.hidden = false; 
+  canvas.style.opacity = 1;
 }

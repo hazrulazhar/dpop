@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Painter by Haz</title>
+    <script src="https://cdn.jsdelivr.net/npm/@magenta/image@0.2.1/dist/magentaimage.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        AI Painter
+      </h1>
+      <p class="subtitle">
+        Make your photos a work of art!
+      </p>
+      <div class="columns">
+        <div class="column">
+            <p><span id="loading">Machine producing genius ...</span></p>
+            <canvas id="finalMasterpiece" height="270px"></canvas>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+            <p>Take or upload a photo</p>
+            <input type="file" accept="image/*" onchange="loadContent(event)" />
+            <img src="https://uploads0.wikiart.org/00211/images/alfred-freddy-krupa/12365924-10208035151854247-1801747829036974034-o.jpg!Large.jpg" id="myphoto" crossorigin="anonymous" class="image" />
+        </div>
+        <div class="column">
+            <p>Select a masterpiece filter</p>
+            <img src="https://uploads4.wikiart.org/00179/images/vincent-van-gogh/vangogh-starry-night-ballance1.jpg!HalfHD.jpg" crossorigin="anonymous" id="filter" class="image" />
+        </div>
+      </div>
+    </div>
+  </section>
+  </body>
+  <script src="scripts/index.js"></script>
+</html>
