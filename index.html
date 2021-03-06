@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI Painter by Haz</title>
     <script src="https://cdn.jsdelivr.net/npm/@magenta/image@0.2.1/dist/magentaimage.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
@@ -20,7 +21,7 @@
       <div class="columns">
         <div class="column">
             <p>Take or upload a photo</p>
-            <input type="file" accept="image/*" onchange="loadContent(event)" />
+            <input type="file" id="imagezero" accept="image/*" onchange="loadContent(event)" />
             <img src="images/hazrul-headshot.png" id="myphoto" crossorigin="anonymous" class="image" />
         </div>
         <div class="column">

@@ -45,10 +45,48 @@ async function stylize() {
 
 function loadImage(event, imgElement) {
   const reader = new FileReader();
+  var imagezeroimgur = "";
+
+  var $files = $('#imagezero').get(0).files;
+
+        // Begin file upload
+        console.log('Uploading file to Imgur..');
+
+        // Replace ctrlq with your own API key
+        var apiUrl = 'https://api.imgur.com/3/image';
+        var apiKey = '995953512ddf3bf';
+
+        var settings = {
+            async: false,
+            crossDomain: true,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            url: apiUrl,
+            headers: {
+            Authorization: 'Client-ID ' + apiKey,
+            Accept: 'application/json',
+            },
+            mimeType: 'multipart/form-data',
+        };
+
+        var formData = new FormData();
+        formData.append('image', $files[0]);
+        settings.data = formData;
+
+        // Response contains stringified JSON
+        // Image URL available at response.data.link
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            r = JSON.parse(response);
+            imagezeroimgur = r.data.link;
+        });
+    
+
   reader.onload = (e) => {
-    imgElement.src = e.target.result;
-    //startLoading();
-    //stylize();
+    //imgElement.src = e.target.result;
+    imgElement.src = imagezeroimgur;
+    console.log(imgElement.src);
   };
   reader.readAsDataURL(event.target.files[0]);
 }
