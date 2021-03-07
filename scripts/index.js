@@ -4,6 +4,7 @@ const ctx = canvas.getContext('2d');
 const contentImg = document.getElementById('myphoto');
 const styleImg = document.getElementById('filter');
 const loading = document.getElementById('loading');
+const btnAct = document.getElementById('btnAction');
 const btnDL = document.getElementById('btnDownload');
 const artTitle = document.getElementById('artpiece-title');
 
@@ -11,6 +12,7 @@ const artTitle = document.getElementById('artpiece-title');
 start();
 
 function start() {
+  btnAct.hidden = true;
   btnDL.hidden = true;
   loading.hidden = true;
 }
@@ -42,6 +44,7 @@ async function stylize() {
     ctx.putImageData(imageData, 0, 0);
   });
 
+  btnAct.hidden = false;
   btnDL.hidden = false;
 }
 
