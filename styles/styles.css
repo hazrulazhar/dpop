@@ -1,11 +1,125 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+.header {
+    background-color: #233D45;
+    display: block;
+    padding: 10px;
+}
+
+.logo {
+    height: 60px;
+}
+
+.subtitle {
+    color: #fff;
+    text-align: center;
+}
+
+.intro {
+    display: block;
+    padding: 10px;
+    padding-bottom: 30px;
+    text-align: left;
+    font-size: 0.9em;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 65%, rgba(218,235,255,1) 100%);
+}
+
+.intro div h2, .intro div p {
+    text-align: left;
+}
+
+.intro .container {
+    max-width: 800px;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 1.6em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.photo {
+    background-color: #137796;
+    background: url('/images/pexels-elijah-o\'donnell-3473569.jpg');
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    display: block;
+    padding-bottom: 30px;
+}
+
+.paintit {
+    background-color: #137796;
+    background: url('/images/pexels-project-atlas-1674049.jpg') 50% 20%;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+.photo div img {
+    text-align: center;
+    margin: auto auto;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#imagezero {
+    display: block;
+    margin: auto auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container {
+    text-align: center;
+}
+
+.container div img, .container div li {
+    margin: auto auto;
+    text-align: center;
+}
+
+.btnAction {
+    margin: 10px;
+}
+
 .image {
     width: 250px;
 }
 
+#artpiece-title {
+    display: block;
+    margin-bottom: 20px;
+}
+
 .filter-choices {
     display: flex;
+    max-width: 800px;
+    margin: auto auto;
+    margin-bottom: 15px;
 }
 
 .image-choices {
-    width: 50px;
+    height: 50px;
+}
+
+.footer {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 0.8em;
+}
+
+footer {
+    text-align: center;
+}
+
+button {
+    font-size: 1.3em;
+    border-radius: 10px;
+    padding: 10px;
 }
