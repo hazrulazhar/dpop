@@ -44,7 +44,7 @@ h2 {
 
 .photo {
     background-color: #137796;
-    background: url('/images/pexels-elijah-o\'donnell-3473569.jpg');
+    background: url('images/pexels-elijah-o\'donnell-3473569.jpg');
     background-size: cover;
     text-align: center;
     color: #fff;
@@ -54,7 +54,7 @@ h2 {
 
 .paintit {
     background-color: #137796;
-    background: url('/images/pexels-project-atlas-1674049.jpg') 50% 20%;
+    background: url('images/pexels-project-atlas-1674049.jpg') 50% 20%;
     background-size: cover;
     text-align: center;
     color: #fff;
