@@ -122,6 +122,7 @@ button {
     font-size: 1.3em;
     border-radius: 10px;
     padding: 10px;
+    background-color: aliceblue;
 }
 
 .feed {
