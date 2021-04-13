@@ -1,9 +1,25 @@
 $(document).ready(function() {
     $.ajax({
-        url: "https://www.wikiart.org/en/app/Search/ArtistAdvancedSearch/?isAjax=true&layout=new&dictIdsJson=%5B%2257726b50edc2cb3880ad7290%22,%2257726b50edc2cb3880ad7318%22,%2257726b50edc2cb3880ad7310%22,%2257726b50edc2cb3880ad7378%22,%2257726b50edc2cb3880ad7420%22%5D&layout=new&maxYear=1890&minYear=-50000&page=1&resultType=masonry"
+        url: "wikiart.php?request=asian-artists-list"
     }).then(function(data) {
-        $.each(data, function(key,value) {
-            console.log(key+": "+value);
-        }); 
+        var artists = $.parseJSON(data);
+        console.log(artists.Artists);
+
+        $.each(artists, function(key, value) {
+            $.each(value, function(k,v) {
+                console.log(k);    
+                console.log(v.title);
+
+                if(k%3==0) {
+                    $("#artists").append("<div class='columns'>");
+                }
+
+                $("#artists").append("<div class='column is-one-third'>"+v.title+"</div>");
+
+                if(k%3==0) {
+                    $("#artists").append("</div>");
+                }  
+            })
+        });
     });
 });
