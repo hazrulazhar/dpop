@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AI Painter by Haz</title>
+    <title>A.I. Museum of Art</title>
     <script src="https://cdn.jsdelivr.net/npm/@magenta/image@0.2.1/dist/magentaimage.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
@@ -13,74 +13,36 @@
     <section class="header">
       <div class="container">
         <h1 class="title">
-          <img src="images/aipainter-alt.png" alt="ai painter logo" class="logo" />
+          <a href="index.html"><img src="images/aimuseumofart-alt.png" alt="ai museum logo" class="logo" /></a>
         </h1>
-        <p class="subtitle">
-          Make your photos a work of art!
-        </p>
       </div>
     </section>
-    <section class="intro">
-      <div class="container">
-        <div class="columns">
-          <div class="column">
-            <h2>About a.i.painter</h2>
-            <p>With the COVID-19 pandemic causing art galleries to close indefinitely, the public have no access to experience art. What if we could get the online public to make art inspired by historical artists? a.i.painter lets users explore art by taking or uploading a photo and selecting a masterpiece filter like on instagram and let the A.I. paint the photo. Users will be able to explore works done by others, and learn about the artist behind the original work.</p>
-          </div>
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container hero-content has-text-right">
+          <p class="title">
+            Discrimination Ends Here
+          </p>
+          <p class="subtitle">
+            Equality • Justice • Art
+          </p>
         </div>
       </div>
     </section>
-    <section class="photo">
+    <section class="container about">
+      Tbe A.I. Museum of Art is a digital museum that exists to bring the implementation of artificial intelligence into art. By using the power of neural networks, we showcase how art can be generated with algorithms with the help of man. 
+      We also showcase art from under-represented demographics in order to provide equitable outcomes especially for Asian and Female artists. In our maiden launch, we bring you 2 curations, one featuring exclusive female artists, and the other featuring exclusively Asian artists.
+      You will learn more about these artists and their art, and will be able to generate art of your own using their canvasses as your filters and share it on Instagram. With these curations, we hope we get one step closer to equality and reduce discrimination in the world.
+    </section>
+    <section class="curations">
       <div class="columns">
-        <div class="column">
-            <h2>Take or upload a photo</h2>
-            <input type="file" id="imagezero" accept="image/*" onchange="loadContent(event)" />
-            <img src="images/hazrul-headshot.png" id="myphoto" crossorigin="anonymous" class="image" />
+        <div class="asian column is-half">
+            <a href="asian-artists.html">Asians</a>
+        </div>
+        <div class="female column is-half"> 
+            Females
         </div>
       </div>
-    </section>
-    <section class="originalart">
-      <div class="container">
-        <div class="columns">
-          <div class="column">
-              <h2>Select a masterpiece filter</h2>
-              <img src="images/vangogh-starry-night-ballance1.jpg" crossorigin="anonymous" id="filter" class="image" />
-              <br />
-              <span id="artpiece-title">The Starry Night by Van Gogh</span>
-              <ul class="filter-choices">
-                <!--li><img src="https://uploads4.wikiart.org/00179/images/vincent-van-gogh/vangogh-starry-night-ballance1.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="The Starry Night by Van Gogh" /></li-->
-                <li><img src="images/vangogh-starry-night-ballance1.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="The Starry Night by Van Gogh" /></li>
-                <li><img src="https://uploads7.wikiart.org/images/leonardo-da-vinci/mona-lisa.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="Mona Lisa by Leonardo Da Vinci" /></li>
-                <li><img src="https://uploads0.wikiart.org/images/aleksandra-ekster/woman-with-fish-1934.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="Woman with Fish by Aleksandra Ekster" /></li>
-                <li><img src="https://uploads3.wikiart.org/images/david-allan/the-continence-of-scipio-1774.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="The Continence of Scipio by David Allan" /></li>
-                <li><img src="https://uploads7.wikiart.org/images/raden-saleh/a-flood-in-java.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="A flood in Java by Raden Saleh" /></li>
-                <li><img src="https://uploads4.wikiart.org/images/raden-saleh/winterlandschaft-1830.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="Winterlandschaft by Raden Saleh" /></li>
-                <li><img src="https://uploads8.wikiart.org/00327/images/margaret-macdonald/la-mort-parfumee-1921.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="La Mort Parfumee by Margeret Macdonald" /></li>
-                <li><img src="https://uploads7.wikiart.org/00187/images/margaret-macdonald/mackintosh-margaret-macdonald-three-perfumes-1912.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="The Three Perfumes by Margeret Macdonald" /></li>
-              </ul>
-          </div>
-        </div>
-      </div>  
-    </section>
-    <section class="paintit">
-      <div class="container">
-        <div class="columns">
-          <div class="column">
-            <h2>Get your artwork!</h2>
-            <p class="btnAction"><button onclick="paint()">Paint with AI</button></p>
-            <p><span id="loading">Machine producing genius ...</span></p>
-            <canvas id="finalMasterpiece" height="270px"></canvas>
-            <a id="masterpiece"></a>
-            <p id="btnAction" class="btnAction"><button id="btnDownload" onclick="downloadArt()">Download Art and Share on Instagram</button>
-              <br />Share on Instagram with the hashtag #aipainter
-            </p>
-          </div>
-        </div>
-      </div>  
-    </section>
-    <section class="feed">
-      <h2>Explore what others have made</h2>
-      <div class="container embedsocial-hashtag" data-ref="397d884ac52a79dca82c5b1d0f7b894c2245caf0" ><a class="feed-powered-by-es" href="https://embedsocial.com/products/embedfeed/" target="_blank" title="Powered by EmbedSocial">Powered by EmbedSocial<span>→</span></a></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialHashtagScript"));</script>
     </section>
     <section class="footer">
       <footer>

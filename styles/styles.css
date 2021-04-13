@@ -133,3 +133,73 @@ button {
 .feed .container {
     max-width: 800px;
 }
+
+.hero {
+    background-image: url("../images/hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero.asians {
+    background-image: url("../images/asian.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 -400px;
+}
+
+.hero-content > .subtitle {
+    text-align: right !important;
+}
+
+.about {
+    max-width: 800px !important;
+    text-align: left;
+    padding: 10px;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+
+.curations, .artists {
+    max-width: 780px;
+    margin: auto auto;
+    margin-bottom: 20px;
+}
+
+.artists .column {
+    text-align: center;
+}
+
+.curations .column {
+    margin: 5px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.curations a, .curations a:visited {
+    color: #ffffff;
+}
+
+.curations a:hover {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.asian {
+    background-image: url("../images/asian.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.female {
+    background-image: url("../images/female.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
