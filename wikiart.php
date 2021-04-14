@@ -7,6 +7,20 @@ if ($_GET["request"]=="asian-artists-list") {
    echo $get_data;
 }
 
+if ($_GET["request"]=="artist") {
+   $url = "https://www.wikiart.org/".$_GET["artistUrl"]."?json=2";
+   $get_data = callAPI('GET', $url, false);
+   //$response = json_decode($get_data, true);
+   echo $get_data;
+}
+
+if ($_GET["request"]=="artwork") {
+   $url = "https://www.wikiart.org/en/api/2/PaintingsByArtist?id=".$_GET["artistId"];
+   $get_data = callAPI('GET', $url, false);
+   //$response = json_decode($get_data, true);
+   echo $get_data;
+}
+
 function callAPI($method, $url, $data){
     $curl = curl_init();
     switch ($method){

@@ -159,7 +159,7 @@ button {
     margin-bottom: 10px;
 }
 
-.curations, .artists {
+.curations, .artists, .artworks {
     max-width: 780px;
     margin: auto auto;
     margin-bottom: 20px;
@@ -182,6 +182,17 @@ button {
 .curations a:hover {
     text-decoration: underline;
     text-transform: uppercase;
+}
+
+.artistListItem {
+    background-color: #eeeeee;
+    height: 230px;
+    padding: 0;
+    margin: 3px;
+}
+
+.artistListItem img {
+    height: 85%;
 }
 
 .asian {
