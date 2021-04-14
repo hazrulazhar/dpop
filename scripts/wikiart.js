@@ -11,14 +11,11 @@ $(document).ready(function() {
                 console.log(v.title);
 
                 if(k%3==0) {
-                    $("#artists").append("<div class='columns'>");
+                    $("#artists").append("<div id='col-"+k+"' class='columns'>");
                 }
 
-                $("#artists").append("<div class='column is-one-third'>"+v.title+"</div>");
+                $("#col-"+k).append("<div class='column is-one-third'>"+v.title+"</div>");
 
-                if(k%3==0) {
-                    $("#artists").append("</div>");
-                }  
             })
         });
     });
