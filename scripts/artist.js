@@ -25,7 +25,7 @@ $(document).ready(function() {
         url: requestArt
     }).then(function(data) {
         var artworks = $.parseJSON(data);
-        //console.log(artworks);
+        console.log(artworks);
 
         $.each(artworks.data, function(k, v) {
             console.log(v.image);
@@ -36,7 +36,12 @@ $(document).ready(function() {
                 a = k;
             }
 
-            $("#col-"+a).append("<div class='artistListItem column is-one-third'><a href='styletransfer.html'><img src='"+v.image+"' /><br />"+v.title+"</a></div>");
+            var txtTitle = v.title;
+            if (txtTitle.length > 32 ) {
+                txtTitle = v.title.slice(0,32)+"...";
+            }
+
+            $("#col-"+a).append("<div class='artistListItem column is-one-third'><a href='styletransfer.html?filter="+v.image+"&title="+v.title+"&artist="+v.artistName+"'><img src='"+v.image+"' /><br />"+txtTitle+"</a></div>");
 
         });
 

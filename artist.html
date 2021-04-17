@@ -3,25 +3,69 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Asian Artists - A.I. Museum of Art</title>
+    <title>Artist Profile - A.I. Museum of Art</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
-    <section class="header">
-      <div class="container">
-        <h1 class="title">
-          <a href="index.html"><img src="images/aimuseumofart-alt.png" alt="ai museum logo" class="logo" /></a>
-        </h1>
+    <section class="hero is-primary is-medium">
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item">
+                <a href="index.html"><img src="images/aimuseumofart-alt.png" alt="ai museum logo" class="logo" /></a>
+              </a>
+              <span class="navbar-burger" data-target="navbarMenuHeroA">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroA" class="navbar-menu">
+              <div class="navbar-end">
+                <a class="navbar-item" href="index.html">
+                  Home
+                </a>
+                <a class="navbar-item" href="asian-artists.html">
+                  Asian Artists
+                </a>
+                <a class="navbar-item" href="female-artists.html">
+                  Female Artists
+                </a>
+                <span class="navbar-item">
+                  <a class="button is-primary is-inverted" href="styletransfer.html">
+                    <span class="icon">
+                      <i class="fas fa-paint-brush"></i>
+                    </span>
+                    <span>A.I. Painter</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p id="artist-name" class="title"></p>
+        </div>
       </div>
     </section>
-    <section class="container about">
-      <h2 id="artist-name">{ artistName }</h2>
-      <div id="artist-photo" class="is-two-thirds">{ artistPhoto }</div>
-      <div id="artist-data" class="is-one-third]">
-        { artistData }
+
+    <section class="container about-artist">
+      <div class="columns">
+        <div id="artist-photo" class="column is-one-third">{ artistPhoto }</div>
+        <div id="artist-data" class="column is-two-thirds">
+          { artistData }
+        </div>
       </div>
+      <h2>Artist Bio</h2>
       <p id="artist-biodata">{ artistBio }</p>
     </section>
     <section id="artist-artwork" class="artworks">

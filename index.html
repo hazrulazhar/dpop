@@ -7,19 +7,53 @@
     <script src="https://cdn.jsdelivr.net/npm/@magenta/image@0.2.1/dist/magentaimage.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
-    <section class="header">
-      <div class="container">
-        <h1 class="title">
-          <a href="index.html"><img src="images/aimuseumofart-alt.png" alt="ai museum logo" class="logo" /></a>
-        </h1>
+    <section class="hero is-primary is-large">
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item">
+                <a href="index.html"><img src="images/aimuseumofart-alt.png" alt="ai museum logo" class="logo" /></a>
+              </a>
+              <span class="navbar-burger" data-target="navbarMenuHeroA">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroA" class="navbar-menu">
+              <div class="navbar-end">
+                <a class="navbar-item is-active" href="index.html">
+                  Home
+                </a>
+                <a class="navbar-item" href="asian-artists.html">
+                  Asian Artists
+                </a>
+                <a class="navbar-item" href="female-artists.html">
+                  Female Artists
+                </a>
+                <span class="navbar-item">
+                  <a class="button is-primary is-inverted" href="styletransfer.html">
+                    <span class="icon">
+                      <i class="fas fa-paint-brush"></i>
+                    </span>
+                    <span>A.I. Painter</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
-    </section>
-    <section class="hero is-fullheight">
+    
+      <!-- Hero content: will be in the middle -->
       <div class="hero-body">
-        <div class="container hero-content has-text-right">
+        <div class="container has-text-centered">
           <p class="title">
             Discrimination Ends Here
           </p>
@@ -29,18 +63,24 @@
         </div>
       </div>
     </section>
-    <section class="container about">
-      Tbe A.I. Museum of Art is a digital museum that exists to bring the implementation of artificial intelligence into art. By using the power of neural networks, we showcase how art can be generated with algorithms with the help of man. 
-      We also showcase art from under-represented demographics in order to provide equitable outcomes especially for Asian and Female artists. In our maiden launch, we bring you 2 curations, one featuring exclusive female artists, and the other featuring exclusively Asian artists.
-      You will learn more about these artists and their art, and will be able to generate art of your own using their canvasses as your filters and share it on Instagram. With these curations, we hope we get one step closer to equality and reduce discrimination in the world.
-    </section>
+    
+    <div class="intro">
+      <section class="container about">
+        <h2>About A.I. Museum of Art</h2>
+        Tbe A.I. Museum of Art is a digital museum that exists to bring the implementation of artificial intelligence into art. By using the power of neural networks, we showcase how art can be generated with algorithms with the help of man. 
+        We also showcase art from under-represented demographics in order to provide equitable outcomes especially for Asian and Female artists. In our maiden launch, we bring you 2 curations, one featuring exclusive female artists, and the other featuring exclusively Asian artists.
+        You will learn more about these artists and their art, and will be able to generate art of your own using their canvasses as your filters and share it on Instagram. With these curations, we hope we get one step closer to equality and reduce discrimination in the world.
+      </section>
+    </div>
+
     <section class="curations">
+      <h2>Choose Curation</h2>
       <div class="columns">
         <div class="asian column is-half">
             <a href="asian-artists.html">Asians</a>
         </div>
         <div class="female column is-half"> 
-            Females
+          <a href="female-artists.html">Females</a>
         </div>
       </div>
     </section>
@@ -50,5 +90,4 @@
       </footer>
     </section>
   </body>
-  <script src="scripts/index.js" defer></script>
 </html>

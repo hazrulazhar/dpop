@@ -2,19 +2,32 @@ const model = new mi.ArbitraryStyleTransferNetwork();
 const canvas = document.getElementById('finalMasterpiece');
 const ctx = canvas.getContext('2d');
 const contentImg = document.getElementById('myphoto');
-const styleImg = document.getElementById('filter');
+var styleImg = document.getElementById('filter');
 const loading = document.getElementById('loading');
 const btnAct = document.getElementById('btnAction');
 const btnDL = document.getElementById('btnDownload');
 const artTitle = document.getElementById('artpiece-title');
 
-
+if (getUrlVars().hasOwnProperty("filter")) {
+  loadFilter();
+}
 start();
 
 function start() {
   btnAct.hidden = true;
   btnDL.hidden = true;
   loading.hidden = true;
+}
+
+function loadFilter() {
+    $("#artpiece-image").empty().append("<img src='"+getUrlVars()["filter"]+"' crossorigin='anonymous' id='filter' class='image' />");
+    var title = getUrlVars()["title"];
+    var artist = getUrlVars()["artist"];
+    title = decodeURIComponent(title)+" by "+decodeURIComponent(artist);
+    $("#artpiece-title").empty().append(title);
+    
+    styleImg = document.getElementById("filter");
+    console.log(styleImg);
 }
 
 function paint() {
@@ -38,6 +51,7 @@ async function stylize() {
   canvas.width = contentImg.width;
   canvas.height = contentImg.height;
   console.log(contentImg.src);
+  console.log(styleImg.src);
   // This does all the work!
   model.stylize(contentImg, styleImg).then((imageData) => {
     stopLoading();
@@ -64,6 +78,7 @@ function loadContent(event) {
 
 function loadStyle(event) {
   loadImage(event, styleImg);
+  console.log(styleImg);
 }
 
 function startLoading() {
@@ -84,4 +99,19 @@ function downloadArt() {
     link.setAttribute('download', 'masterpiece.png');
     link.setAttribute('href', canvas.toDataURL("image/png"));
     link.click();
+}
+
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+
+    return vars;
 }

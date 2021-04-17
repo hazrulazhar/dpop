@@ -9,6 +9,7 @@
 
 .logo {
     height: 60px;
+    padding-top: 20px;
 }
 
 .subtitle {
@@ -135,37 +136,54 @@ button {
 }
 
 .hero {
-    background-image: url("../images/hero.png");
+    background-image: url("https://uploads6.wikiart.org/images/abdullah-suriosubroto/indonesian-landscape-6.jpg!Large.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .hero.asians {
-    background-image: url("../images/asian.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 -400px;
+    background-image: url("https://uploads5.wikiart.org/images/raja-ravi-varma/galaxy-of-musicians.jpg");
 }
 
-.hero-content > .subtitle {
-    text-align: right !important;
+.hero.females {
+    background-image: url("https://uploads1.wikiart.org/00139/images/lavinia-fontana/apollo.jpg!Large.jpg");
 }
+
+.hero.aipainter {
+    background-image: url("https://uploads7.wikiart.org/00171/images/marianne-von-werefkin/oycjbwizca0.jpg!Large.jpg");
+}
+
+.hero-content  {
+    background-color: darkslategray;
+    width: 50%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
 
 .about {
-    max-width: 800px !important;
+    text-align: left;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.about-artist {
     text-align: left;
     padding: 10px;
     font-size: 0.8em;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    width: 800px;
 }
 
 .curations, .artists, .artworks {
     max-width: 780px;
     margin: auto auto;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.artists .column {
+.artists .column, .artworks .column {
     text-align: center;
 }
 

@@ -7,6 +7,13 @@ if ($_GET["request"]=="asian-artists-list") {
    echo $get_data;
 }
 
+if ($_GET["request"]=="female-artists-list") {
+   $url = "https://www.wikiart.org/en/App/Search/female-artists?json=3&layout=new&page=1&resultType=masonry";
+   $get_data = callAPI('GET', $url, false);
+   //$response = json_decode($get_data, true);
+   echo $get_data;
+}
+
 if ($_GET["request"]=="artist") {
    $url = "https://www.wikiart.org/".$_GET["artistUrl"]."?json=2";
    $get_data = callAPI('GET', $url, false);

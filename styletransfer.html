@@ -3,33 +3,95 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>A.I. Museum of Art</title>
+    <title>A.I. Painter - A.I. Museum of Art</title>
     <script src="https://cdn.jsdelivr.net/npm/@magenta/image@0.2.1/dist/magentaimage.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
-    <section class="header">
-      <div class="container">
-        <h1 class="title">
-          <img src="images/aimuseumofart-alt.png" alt="ai museum logo" class="logo" />
-        </h1>
-        <p class="subtitle">
-          
-        </p>
+    
+    <section class="hero aipainter is-primary is-medium">
+      <!-- Hero head: will stick at the top -->
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item">
+                <a href="index.html"><img src="images/aimuseumofart-alt.png" alt="ai museum logo" class="logo" /></a>
+              </a>
+              <span class="navbar-burger" data-target="navbarMenuHeroA">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroA" class="navbar-menu">
+              <div class="navbar-end">
+                <a class="navbar-item" href="index.html">
+                  Home
+                </a>
+                <a class="navbar-item" href="asian-artists.html">
+                  Asian Artists
+                </a>
+                <a class="navbar-item" href="female-artists.html">
+                  Female Artists
+                </a>
+                <span class="navbar-item">
+                  <a class="button is-primary is-active" href="styletransfer.html">
+                    <span class="icon">
+                      <i class="fas fa-paint-brush"></i>
+                    </span>
+                    <span>A.I. Painter</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title">
+            A.I. Painter
+          </p>
+          <p class="subtitle">
+            Stopping Discrimination with A.I. Art
+          </p>
+        </div>
       </div>
     </section>
+
     <section class="intro">
       <div class="container">
         <div class="columns">
-          <div class="column">
-            <h2>About a.i.painter</h2>
-            <p>With the COVID-19 pandemic causing art galleries to close indefinitely, the public have no access to experience art. What if we could get the online public to make art inspired by historical artists? a.i.painter lets users explore art by taking or uploading a photo and selecting a masterpiece filter like on instagram and let the A.I. paint the photo. Users will be able to explore works done by others, and learn about the artist behind the original work.</p>
+          <div class="column about">
+            <h2>Make art with your photos</h2>
+            <p>You've selected a masterpiece as a filter. Now take or upload a photo and make your own masterpiece and share on social media to make others aware
+              of discrimination against women and Asians. When you share, make sure to use some of these hashtags #aipainter #aimuseumofart #discriminationendshere #stopasianhate #stopgenderpaygap. 
+              With more exposure, we hope to end discrimination soon.
+            </p>
           </div>
         </div>
       </div>
     </section>
+    
+    <section class="originalart">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+              <h2>Selected masterpiece filter</h2>
+              <span id="artpiece-image"><img src="https://uploads7.wikiart.org/00171/images/marianne-von-werefkin/oycjbwizca0.jpg!Large.jpg" crossorigin="anonymous" id="filter" class="image" /></span>
+              <br />
+              <span id="artpiece-title">Осень. Школа by Marianne von Werefkin</span>
+          </div>
+        </div>
+      </div>  
+    </section>
+
     <section class="photo">
       <div class="columns">
         <div class="column">
@@ -39,29 +101,7 @@
         </div>
       </div>
     </section>
-    <section class="originalart">
-      <div class="container">
-        <div class="columns">
-          <div class="column">
-              <h2>Select a masterpiece filter</h2>
-              <img src="images/vangogh-starry-night-ballance1.jpg" crossorigin="anonymous" id="filter" class="image" />
-              <br />
-              <span id="artpiece-title">The Starry Night by Van Gogh</span>
-              <ul class="filter-choices">
-                <!--li><img src="https://uploads4.wikiart.org/00179/images/vincent-van-gogh/vangogh-starry-night-ballance1.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="The Starry Night by Van Gogh" /></li-->
-                <li><img src="images/vangogh-starry-night-ballance1.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="The Starry Night by Van Gogh" /></li>
-                <li><img src="https://uploads7.wikiart.org/images/leonardo-da-vinci/mona-lisa.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="Mona Lisa by Leonardo Da Vinci" /></li>
-                <li><img src="https://uploads0.wikiart.org/images/aleksandra-ekster/woman-with-fish-1934.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="Woman with Fish by Aleksandra Ekster" /></li>
-                <li><img src="https://uploads3.wikiart.org/images/david-allan/the-continence-of-scipio-1774.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="The Continence of Scipio by David Allan" /></li>
-                <li><img src="https://uploads7.wikiart.org/images/raden-saleh/a-flood-in-java.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="A flood in Java by Raden Saleh" /></li>
-                <li><img src="https://uploads4.wikiart.org/images/raden-saleh/winterlandschaft-1830.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="Winterlandschaft by Raden Saleh" /></li>
-                <li><img src="https://uploads8.wikiart.org/00327/images/margaret-macdonald/la-mort-parfumee-1921.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="La Mort Parfumee by Margeret Macdonald" /></li>
-                <li><img src="https://uploads7.wikiart.org/00187/images/margaret-macdonald/mackintosh-margaret-macdonald-three-perfumes-1912.jpg" crossorigin="anonymous" id="filter" class="image-choices" onclick="chooseFilter(event)" alt="The Three Perfumes by Margeret Macdonald" /></li>
-              </ul>
-          </div>
-        </div>
-      </div>  
-    </section>
+
     <section class="paintit">
       <div class="container">
         <div class="columns">
